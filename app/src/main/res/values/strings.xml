@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DrivyApp</string>
+
+    <string name="car_price_per_day">%1$s€/j</string>
+    <string name="owner_header">Propriétaire</string>
+    <string name="detail_price_per_day">%1$s€</string>
+    <string name="detail_car_price_time">Par jour</string>
+
+</resources>

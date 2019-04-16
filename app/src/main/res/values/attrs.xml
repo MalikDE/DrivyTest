@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularImageAttr">
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="borderColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ImprovedRatingBarAttr">
+        <attr name="fillColor" format="color" />
+        <attr name="numStars" format="integer" />
+    </declare-styleable>
+</resources>

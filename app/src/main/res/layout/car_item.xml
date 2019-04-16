@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/car_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/darker_gray"
+        android:foreground="?selectableItemBackground"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/car_item_title"
+        style="@style/CarItemText.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/car_item_price_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_item_image"
+        tools:text="Citroen C3" />
+
+    <fr.drivy.malik.app.ui.utils.ImprovedRatingBar
+        android:id="@+id/car_item_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/rating_height"
+        app:fillColor="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="@+id/car_item_title"
+        app:layout_constraintTop_toBottomOf="@+id/car_item_title" />
+
+    <TextView
+        android:id="@+id/car_rating_count"
+        style="@style/CarItemText.Subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/car_item_rating"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/car_item_rating"
+        app:layout_constraintTop_toTopOf="@+id/car_item_rating"
+        tools:text="34" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/car_item_price_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/car_item_rating"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/car_item_title">
+
+        <TextView
+            android:id="@+id/car_item_price"
+            style="@style/CarItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black0F"
+            android:gravity="end"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/car_item_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/car_item_title"
+            tools:text="12€" />
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
