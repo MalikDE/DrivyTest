@@ -1,0 +1,77 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    // Versions
+    ext.versions = [
+            // sdk
+            'sdk'             : [
+                    'min'    : 21,
+                    'compile': 28,
+                    'target' : 28,
+            ],
+
+            // gradle
+            'gradle'          : '3.3.2',
+
+            // support
+            'supportLib'      : '28.0.0',
+            'constraintLayout': '1.1.3',
+
+            // kotlin
+            'kotlin'          : '1.3.21',
+
+            // retrofit
+            'retrofit'        : '2.5.0',
+
+            // arch comp
+            'arch'            : '1.1.0',
+
+            // arch comp
+            'picasso'         : '2.71828',
+    ]
+
+    // Dependences
+    ext.deps = [
+            'support'  : [
+                    'appcompat'       : "com.android.support:appcompat-v7:$versions.supportLib",
+                    'recyclerview'    : "com.android.support:recyclerview-v7:$versions.supportLib",
+                    'constraintLayout': "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
+                    'cardview'        : "com.android.support:cardview-v7:$versions.supportLib",
+            ],
+            'kotlin'   : [
+                    'stdlib': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+            ],
+            'retrofit2': [
+                    'retrofit': "com.squareup.retrofit2:retrofit:$versions.retrofit",
+                    'gson'    : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+            ],
+            'arch'     : [
+                    'lifecycle': "android.arch.lifecycle:extensions:$versions.arch",
+            ],
+            'squareup' : [
+                    'picasso': "com.squareup.picasso:picasso:$versions.picasso"
+            ]
+    ]
+    dependencies {
+        classpath "com.android.tools.build:gradle:$versions.gradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

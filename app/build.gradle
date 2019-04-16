@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.sdk.compile
+
+    defaultConfig {
+        applicationId "fr.drivy.test.app"
+
+        minSdkVersion versions.sdk.min
+        targetSdkVersion versions.sdk.target
+
+        versionName "1.0.0"
+        versionCode 1
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Kotlin
+    implementation deps.kotlin.stdlib
+
+    //support
+    implementation deps.support.appcompat
+    implementation deps.support.recyclerview
+    implementation deps.support.constraintLayout
+    implementation deps.support.cardview
+
+    // Arch comp
+    implementation deps.arch.lifecycle
+
+    // Picasso
+    implementation deps.squareup.picasso
+
+    //retrofit
+    implementation deps.retrofit2.retrofit
+    implementation deps.retrofit2.gson
+}
